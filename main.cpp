@@ -126,7 +126,8 @@ int main(int argc, const char * argv[]) {
         newHero.COL = COL;
         newHero.HPs = HPs;
         newHero.L = L ;
-
+        // due to the fact that the primary attribute is not a 'number' we need some if statements to assign it. (I assign it an enumeration or enum for short, which is equivelent to saying
+        // that strength = 0, agility = 1, intelegence = 2. This is defined near the top of the file.
         if(PRI.compare("strength")) newHero.PRI = strength;
         if(PRI.compare("agility")) newHero.PRI = agility;
         if(PRI.compare("intelegence")) newHero.PRI = intelegence;
@@ -168,15 +169,15 @@ int main(int argc, const char * argv[]) {
 
     // Here is a fun quiz for your dota knowledge :P
 
-    // Who is the fastest here (movement speed)
+    // Who is the fastest hero (movement speed)
 
     float fastestMovement = 0; // variable for holding the current fastest.
     int heroNum = 0; // variable for holding the current winner of the fastest hero competition.
 
     for (int i  = 0; i  < heros.size(); i++ ){
-        if(heros[i].MOV > fastestMovement){
+        if(heros[i].MOV > fastestMovement){     //if this hero has a faster movement speed than the best up till now, update our fastest hero.
             fastestMovement = heros[i].MOV;
-            heroNum = i ;
+            heroNum = i ;                       // save the number that corresponds the the hero so we can use this to find out more details about them if needed. (like their name)
         }
     }
 
@@ -219,6 +220,9 @@ int main(int argc, const char * argv[]) {
     //uncomment for answers to the quickest / slowest fights.
 //    std::cout << "At level " << atLevel << " the shortest fight is " << heros[fastAttacker].name << " attacking " << heros[fastDefender].name << " which takes " << fastestKill << "s" << std::endl;
 //    std::cout << "At level " << atLevel << " the longest fight is " << heros[slowAttacker].name << " attacking " << heros[slowDefender].name << " which takes " << slowestKill << "s" << std::endl;
+
+
+    //reset our variables.
     fastestKill = 1000000;
     slowestKill = 0;
     int fastLevel =0;
