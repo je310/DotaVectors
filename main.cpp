@@ -29,19 +29,23 @@ public:
     double STR,STRp,AGI,AGIp,INT,INTp;
     double T,Tp,LVL25,MOV,AR,DMGmin,DMGmax,RG,BAT,ATKPT,ATKBS,VSminD,VSminN,TR,COL,HPs,L;
 
+    // return the armour at a particular level, depends on agility.
     float ARatLvl (int level){
         return AR + ((level * AGIp)+ AGI) * (1/7);
     }
 
+    // return the attack speet at a particular level, depends on agility.
     float attackSpeed(int level){
         float bonus = 0.01 * (AGI + level*AGIp);
         return BAT + bonus;
     }
 
+    // return the health of a hero at a particular level, depends on strength
     float health(int level){
         return 200 + 20*(STR + STRp* level);
     }
 
+    // returns the attack damage at a particular level. Depends on the primary attribute of teh hero.
     float AttackDmg(int level = 1){
         float bonus;
         switch (PRI){
@@ -70,20 +74,10 @@ public:
 
     }
     
-//    float tKillCamp(creep toKill){
-//        float dps = dmg/ attack_speed;
-//        float time = toKill.hp/ dps;
-        
-//        return time;
-        
-        
-//    }
-        
+
         
     
 };
-
-//float hero::tKillCamp(<#creep toKill#>)
 
 
 std::string bmg(creep one, creep two);
@@ -150,7 +144,7 @@ int main(int argc, const char * argv[]) {
     else std::cout << heros[5].name << " is stronger than " << heros[4].name << " (at lvl 1!)" << std::endl;
 
 
-    if(heros[4].STR + heros[4].STRp *  25 > heros[5].STR + heros[5].STRp *  25) std::cout << heros[4].name << " is stronger than " << heros[88].name << " (at lvl 25!)" << std::endl;
+    if(heros[4].STR + heros[4].STRp *  25 > heros[5].STR + heros[5].STRp *  25) std::cout << heros[4].name << " is stronger than " << heros[5].name << " (at lvl 25!)" << std::endl;
     else std::cout << heros[5].name << " is stronger than " << heros[4].name << " (at lvl 25!)" << std::endl;
 
     // Can you see the power of using a vector? Think about how we were doing things with the creeps. (below) . Each creep needed a variable (golem or centaur in this case)
