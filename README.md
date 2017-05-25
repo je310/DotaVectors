@@ -14,16 +14,26 @@ You can then open this in Xcode (though I have no particular way to help you set
 or you can compile by doing the following. 
 
 (inside the cloned directory) 
+
 mkdir build 
+
 cd build 
+
 cmake ..
+
 make 
+
 ./dota_code 
+
 
 (explanation of the above for reference) 
 
 mkdir build (make a new directory called build, this is where all generated files will end up) 
+
 cd build (change directory to the newly created biuld directory) 
+
 cmake ..  (Run cmake in the folder 'one up' from here, cmake is program that sets up your compilation system according to the information I have saved in the CMakeLists.txt file.) 
+
 make (run the compiler with the settings we just got cmake to prepare for us) 
+
 ./dota_code (run the code !). 
