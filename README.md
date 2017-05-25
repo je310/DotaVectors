@@ -6,9 +6,9 @@ For a basic introduction to vectors visit this site https://medium.com/the-renai
 
 The main thing is to have fun and don't get fustrated with any of the code, I wanted to make the questions exciting. Try adding breakpoints in the code (if you get it working within XCode) and see what the variables are doing that way. 
 
-To run the code: 
-
-git clone https://github.com/je310/DotaVectors.git in a folder of your choosing. 
+#To run the code: 
+In a folder of your choosing run: 
+git clone https://github.com/je310/DotaVectors.git 
 
 You can then open this in Xcode (though I have no particular way to help you set that up as I do not use it myself. A hack would be to copy and pase the contents of main.cpp and dotaStats.csv to the equivelent files in your current project.). 
 or you can compile by doing the following. 
@@ -26,7 +26,9 @@ make
 ./dota_code 
 
 
-(explanation of the above for reference) 
+To recompile after editing main.cpp you only need to do "make", whilst in the build directory to recompile.  
+
+#(explanation of the above for reference) 
 
 mkdir build (make a new directory called build, this is where all generated files will end up) 
 
